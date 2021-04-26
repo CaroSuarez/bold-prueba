@@ -1,0 +1,29 @@
+@import "./variables";
+
+
+ul{
+    background-color: $white;
+    display: flex;
+    grid-column: 2;
+    grid-row: 2 / 2;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    height: 80%;
+    align-items: center;
+    margin: 20px;
+    padding: 0;
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        background-color: $my-background-color;
+        width: 30%;
+        border-radius: $border-round;
+        color: $blue;
+        font-weight: bolder;
+    }
+}

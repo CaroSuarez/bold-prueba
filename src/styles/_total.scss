@@ -1,0 +1,52 @@
+@import "./variables";
+
+.total-box {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: span 2;
+  background-color: $white;
+  margin: 20px;
+  border-radius: $border-round;
+
+  .total-header {
+    background-image: $gradient2;
+    border-top-left-radius: $border-round;
+    border-top-right-radius: $border-round;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    height: 30%;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .total-content {
+    color: $gradient2;
+    height: 70%;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    justify-content: center;
+
+    .total {
+      font-size: 50px;
+      font-weight: bolder;
+      background: -webkit-linear-gradient(#62325e, #af6477);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    .total-date {
+        margin: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+       color:$blue;
+        text-align: center;
+      }
+  }
+}

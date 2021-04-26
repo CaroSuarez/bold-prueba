@@ -1,0 +1,42 @@
+.filter {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+  background-color: $white;
+  border: none;
+  border-radius: $border-round;
+  padding: 10px;
+  justify-self: end;
+  width: 50%;
+  height: 50%;
+  margin: 20px 30px;
+
+  .filter-button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: $white;
+    font-size: 20px;
+    color: $blue;
+  }
+  .filter-options {
+    background-color: $white;
+    display: none;
+    flex-direction: column;
+    border-radius: $border-round;
+    padding: 20px;
+
+    label {
+      height: 50px;
+      border-radius: $border-round;
+      font-size: 20px;
+      color: $blue;
+
+      input {
+        margin: 20px;
+      }
+    }
+  }
+}
