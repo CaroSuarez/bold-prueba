@@ -1,43 +1,56 @@
-import { faFilter, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFilter,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Filter = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { iconCheckbox } from "../functions/iconRender";
+
+const Filter = ({ filterOption, changeFilter, show, changeShow }) => {
   return (
     <div className="filter">
-      <button className="filter-button">
+      <button className="filter-button" onClick={() => changeShow()}>
         FILTRAR &nbsp;
-        <FontAwesomeIcon icon={faFilter} className="icon" />
-        <FontAwesomeIcon icon={faTimes} className="icon" />
+        {show === "hidden" ? (
+          <FontAwesomeIcon icon={faFilter} className="icon" />
+        ) : (
+          <FontAwesomeIcon icon={faTimes} className="icon" />
+        )}
       </button>
-      <form className="filter-options">
-        <label>
-          <input
-            name="isGoing"
-            type="checkbox"
-            // checked={false}
-            // onChange={false}
+      <div
+        id="filter-container"
+        className={
+          show === "hidden" ? "filter-options-hidden" : "filter-options"
+        }
+      >
+        <div
+          className="option"
+          onClick={() => changeFilter("cobro con datáfono")}
+        >
+          <FontAwesomeIcon
+            icon={iconCheckbox(filterOption === "cobro con datáfono")}
+            className="icon"
           />
-          cobro con datáfono
-        </label>
-        <label>
-          <input
-            name="isGoing"
-            type="checkbox"
-            // checked={false}
-            // onChange={false}
+          &nbsp; cobro con datáfono
+        </div>
+        <div
+          className="option"
+          onClick={() => changeFilter("cobro con link de pago")}
+        >
+          <FontAwesomeIcon
+            icon={iconCheckbox(filterOption === "cobro con link de pago")}
+            className="icon"
           />
-          cobro con link de pago
-        </label>
-        <label>
-          <input
-            name="isGoing"
-            type="checkbox"
-            // checked={false}
-            // onChange={false}
+          &nbsp; cobro con link de pago
+        </div>
+        <div className="option" onClick={() => changeFilter("ver todo")}>
+          <FontAwesomeIcon
+            icon={iconCheckbox(filterOption === "ver todo")}
+            className="icon"
           />
-          ver todo
-        </label>
-      </form>
+          &nbsp; ver todo
+        </div>
+      </div>
     </div>
   );
 };

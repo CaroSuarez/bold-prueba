@@ -1,11 +1,10 @@
-import { mock_data } from "../mock_data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   iconCardRender,
   iconTransactionStateRender,
 } from "../functions/iconRender";
 
-const Table = ({ time }) => {
+const Table = ({ time, data }) => {
   return (
     <div className="table-container">
       <div className="table-header">Tus ventas de {time} </div>
@@ -21,7 +20,7 @@ const Table = ({ time }) => {
           </tr>
         </thead>
         <tbody className="table-body" >
-          {mock_data.map((transaction) => (
+          {data?.map((transaction) => (
             <tr key={transaction.id_transaccion_bold}>
               <td className = "blueCell" >
                 <span>
@@ -34,7 +33,7 @@ const Table = ({ time }) => {
                 <span>{transaction.transaccion}</span>
               </td>
                 
-              <td> {transaction.fecha} &nbsp;  {transaction.hora } </td>
+              <td> {transaction.fecha}</td>
               <td>
                 <span>
                   <FontAwesomeIcon
