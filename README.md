@@ -6,3 +6,5 @@ This is the repo of my technical test for front end role at Bold
 ### `npm install`
 ### `npm start`
 
+** inside bold-prueba**
+
